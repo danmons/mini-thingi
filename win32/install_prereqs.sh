@@ -36,20 +36,24 @@ sudo apt install -y \
  zip \
  zstd \
 
-echo "Installing armhf/ARM32 libraries and tools..."
-sudo apt install -y \
- cpp-arm-linux-gnueabihf \
- gcc-10-arm-linux-gnueabihf \
- gcc-arm-linux-gnueabihf \
- libasan6-armhf-cross \
- libatomic1-armhf-cross \
- libc6-armhf-cross \
- libc6-dev-armhf-cross \
- libgcc-10-dev-armhf-cross \
- libgcc-s1-armhf-cross \
- libgomp1-armhf-cross \
- libstdc++6-armhf-cross \
- libubsan1-armhf-cross \
- linux-libc-dev-armhf-cross \
 
+SBCARCH=$(uname -m)
+if [ "${SBCARCH} == "aarch64" ]
+then
+  echo "Installing armhf/ARM32 libraries and tools..."
+  sudo apt install -y \
+   cpp-arm-linux-gnueabihf \
+   gcc-10-arm-linux-gnueabihf \
+   gcc-arm-linux-gnueabihf \
+   libasan6-armhf-cross \
+   libatomic1-armhf-cross \
+   libc6-armhf-cross \
+   libc6-dev-armhf-cross \
+   libgcc-10-dev-armhf-cross \
+   libgcc-s1-armhf-cross \
+   libgomp1-armhf-cross \
+   libstdc++6-armhf-cross \
+   libubsan1-armhf-cross \
+   linux-libc-dev-armhf-cross \
 
+fi
