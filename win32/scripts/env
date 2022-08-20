@@ -1,0 +1,20 @@
+#!/bin/bash
+
+## mini-thingi environment for win32
+
+# Linux armhf/ARM32 dir
+LDIR=${HOME}/mini-thingi/win32/bullseye_armhf
+
+# win32/WINE i386 dir
+WDIR=${HOME}/mini-thingi/win32/bullseye_i386
+
+# Linux armhf/ARM32 paths
+export LD_LIBRARY_PATH=${LDIR}/gl4es:/usr/arm-linux-gnueabihf/lib:${LDIR}/lib:${LDIR}/usr/lib:${LDIR}/lib/arm-linux-gnueabihf:${LDIR}/usr/lib/arm-linux-gnueabihf:${LD_LIBRARY_PATH}:{LDIR}/usr/lib/arm-linux-gnueabihf/alsa-lib:${LDIR}/usr/lib/arm-linux-gnueabihf/apulse:${LDIR}/usr/lib/arm-linux-gnueabihf/pulseaudio
+export PATH=/usr/arm-linux-gnueabihf/bin:${LDIR}/bin:${LDIR}/sbin:${LDIR}/usr/bin:${LDIR}/usr/sbin:${WDIR}/opt/wine-devel/bin:${PATH}
+
+# box86/win32/WINE i386 paths
+export BOX86_PATH=${WDIR}/opt/wine-devel/bin:${BOX86_PATH}
+export BOX86_LD_LIBRARY_PATH=${WDIR}/opt/wine-devel/lib:${BOX86_LD_LIBRARY_PATH}
+
+# Force WINE into win32 mode
+export WINEARCH=win32
