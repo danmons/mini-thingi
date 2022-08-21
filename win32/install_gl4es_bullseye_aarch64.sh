@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # armhf / ARM32
-
+export PATH=/usr/lib/ccache:${PATH}
 export LDIR=${HOME}/mini-thingi/win32/bullseye_armhf
 
 mkdir -p ${HOME}/src >/dev/null

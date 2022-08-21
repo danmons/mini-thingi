@@ -12,6 +12,7 @@ sudo apt install -y \
  build-essential \
  bzip2 \
  ccache \
+ cmake \
  coreutils \
  curl \
  flex \
@@ -38,7 +39,7 @@ sudo apt install -y \
 
 
 SBCARCH=$(uname -m)
-if [ "${SBCARCH} == "aarch64" ]
+if [ "${SBCARCH}" == "aarch64" ]
 then
   echo "Installing armhf/ARM32 libraries and tools..."
   sudo apt install -y \
